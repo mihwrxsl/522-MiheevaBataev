@@ -1,0 +1,116 @@
+﻿<Page x:Class="_522_Miheeva.Pages.AddEditUserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:_522_Miheeva.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="400"
+      Title="👤 Добавление пользователя">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <Border Grid.Row="0" 
+                Style="{DynamicResource HeaderFooterStyle}"
+                Padding="15">
+            <Grid>
+                <TextBlock x:Name="PageTitle" 
+                           Text="👤 Добавление пользователя" 
+                           Style="{DynamicResource HeaderTextStyle}"
+                           HorizontalAlignment="Center"/>
+                <Button x:Name="BtnBack" 
+                        Content="🔙 Назад" 
+                        Style="{DynamicResource BackButtonStyle}"
+                        Click="BtnBack_Click"
+                        HorizontalAlignment="Left"/>
+            </Grid>
+        </Border>
+
+        <!-- Форма -->
+        <Border Grid.Row="1" 
+                Margin="20"
+                Style="{DynamicResource AuthCardStyle}"
+                Padding="30">
+
+            <StackPanel>
+                <!-- Логин -->
+                <TextBlock Text="👑 Логин:" 
+                           Style="{DynamicResource FilterLabelStyle}"
+                           Margin="0,0,0,5"/>
+                <TextBox x:Name="TxtLogin" 
+                         Style="{DynamicResource FilterTextBoxStyle}"
+                         Margin="0,0,0,15"
+                         ToolTip="Введите логин пользователя"/>
+
+                <!-- Пароль -->
+                <TextBlock Text="🔒 Пароль:" 
+                           Style="{DynamicResource FilterLabelStyle}"
+                           Margin="0,0,0,5"/>
+                <PasswordBox x:Name="TxtPassword" 
+                             Margin="0,0,0,15"
+                             ToolTip="Введите пароль пользователя">
+                    <PasswordBox.Style>
+                        <Style TargetType="PasswordBox">
+                            <Setter Property="Height" Value="35"/>
+                            <Setter Property="FontSize" Value="12"/>
+                            <Setter Property="Padding" Value="10"/>
+                            <Setter Property="Background" Value="{DynamicResource LightGoldBrush}"/>
+                            <Setter Property="BorderBrush" Value="{DynamicResource GoldBrush}"/>
+                        </Style>
+                    </PasswordBox.Style>
+                </PasswordBox>
+
+                <!-- ФИО -->
+                <TextBlock Text="👤 ФИО:" 
+                           Style="{DynamicResource FilterLabelStyle}"
+                           Margin="0,0,0,5"/>
+                <TextBox x:Name="TxtFIO" 
+                         Style="{DynamicResource FilterTextBoxStyle}"
+                         Margin="0,0,0,15"
+                         ToolTip="Введите Фамилию Имя Отчество"/>
+
+                <!-- Роль -->
+                <TextBlock Text="💎 Роль:" 
+                           Style="{DynamicResource FilterLabelStyle}"
+                           Margin="0,0,0,5"/>
+                <ComboBox x:Name="CmbRole" 
+                          Style="{DynamicResource FilterComboBoxStyle}"
+                          Margin="0,0,0,25">
+                    <ComboBoxItem Content="User" IsSelected="True"/>
+                    <ComboBoxItem Content="Admin"/>
+                </ComboBox>
+
+                <!-- Кнопки -->
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Center">
+                    <Button x:Name="BtnSave" 
+                            Content="💾 Сохранить" 
+                            Style="{DynamicResource FilterButtonStyle}"
+                            Click="BtnSave_Click"
+                            Margin="0,0,10,0"/>
+                    <Button x:Name="BtnCancel" 
+                            Content="❌ Отмена" 
+                            Style="{DynamicResource FilterButtonStyle}"
+                            Click="BtnCancel_Click"
+                            Margin="10,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- Статус -->
+        <Border Grid.Row="2" 
+                Style="{DynamicResource HeaderFooterStyle}"
+                Padding="10">
+            <TextBlock x:Name="StatusText" 
+                       Text="🌸 Заполните все поля" 
+                       Style="{DynamicResource HeaderTextStyle}"
+                       HorizontalAlignment="Center"/>
+        </Border>
+    </Grid>
+</Page>

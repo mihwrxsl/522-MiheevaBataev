@@ -1,0 +1,151 @@
+﻿<Page x:Class="_522_Miheeva.Pages.UserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:_522_Miheeva.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="💖 Список пользователей">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Панель фильтров -->
+        <Border Grid.Row="0" 
+                Style="{DynamicResource FilterPanelStyle}"
+                Padding="20"
+                Margin="15"
+                CornerRadius="15">
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <!-- Поиск по ФИО -->
+                <StackPanel Orientation="Vertical" Margin="0,0,25,0" Width="180">
+                    <TextBlock Text="👤 Поиск по имени:" 
+                               Style="{DynamicResource FilterLabelStyle}"
+                               Margin="0,0,0,5"/>
+                    <TextBox x:Name="fioFilterTextBox" 
+                             Style="{DynamicResource FilterTextBoxStyle}"
+                             ToolTip="Введи часть ФИО для поиска"
+                             TextChanged="fioFilterTextBox_TextChanged"/>
+                </StackPanel>
+
+                <!-- Сортировка -->
+                <StackPanel Orientation="Vertical" Margin="0,0,25,0" Width="180">
+                    <TextBlock Text="📊 Сортировка:" 
+                               Style="{DynamicResource FilterLabelStyle}"
+                               Margin="0,0,0,5"/>
+                    <ComboBox x:Name="sortComboBox" 
+                              Style="{DynamicResource FilterComboBoxStyle}"
+                              SelectedIndex="0"
+                              ToolTip="Выбери порядок сортировки"
+                              SelectionChanged="sortComboBox_SelectionChanged">
+                        <ComboBoxItem Content="🔼 По возрастанию"/>
+                        <ComboBoxItem Content="🔽 По убыванию"/>
+                    </ComboBox>
+                </StackPanel>
+
+                <!-- Фильтр по роли -->
+                <StackPanel Orientation="Vertical" Margin="0,0,25,0" Width="200">
+                    <TextBlock Text="👑 Фильтр по роли:" 
+                               Style="{DynamicResource FilterLabelStyle}"
+                               Margin="0,0,0,5"/>
+                    <CheckBox x:Name="onlyAdminCheckBox" 
+                              Content="Только администраторы" 
+                              Style="{DynamicResource FilterCheckBoxStyle}"
+                              ToolTip="Показывать только администраторов"
+                              Checked="onlyAdminCheckBox_Checked"
+                              Unchecked="onlyAdminCheckBox_Unchecked"/>
+                </StackPanel>
+
+                <!-- Кнопка очистки -->
+                <StackPanel Orientation="Vertical" Margin="0,0,0,0" Width="150">
+                    <TextBlock Text="✨ Действия:" 
+                               Style="{DynamicResource FilterLabelStyle}"
+                               Margin="0,0,0,5"/>
+                    <Button x:Name="clearFiltersButton" 
+                            Content="Очистить фильтры" 
+                            Style="{DynamicResource FilterButtonStyle}"
+                            ToolTip="Сбросить все фильтры и сортировки"
+                            Click="clearFiltersButton_Click"/>
+                </StackPanel>
+
+            </StackPanel>
+        </Border>
+
+        <!-- Список пользователей -->
+        <ScrollViewer Grid.Row="1" 
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled"
+                      Margin="10">
+            <ItemsControl x:Name="ListUser" 
+                          HorizontalAlignment="Center">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <!-- Карточка пользователя -->
+                        <Border Style="{DynamicResource UserCardStyle}"
+                                Width="220"
+                                Height="280"
+                                Margin="12"
+                                Padding="20">
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <!-- ФИО -->
+                                <Border Grid.Row="0"
+                                        Style="{DynamicResource UserNameBorderStyle}"
+                                        Margin="0,0,0,15">
+                                    <TextBlock Text="{Binding FIO}" 
+                                               Style="{DynamicResource UserNameTextStyle}"
+                                               HorizontalAlignment="Center"/>
+                                </Border>
+
+                                <!-- Аватарка -->
+                                <!-- Аватарка -->
+                                <Border Grid.Row="1"
+                                        Style="{DynamicResource UserAvatarStyle}"
+                                        Margin="0,0,0,15"
+                                        Width="80" Height="80">
+                                    <Image Source="/Pages/default-user.png" 
+                                           Stretch="Uniform"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                                </Border>
+
+                                <!-- Роль -->
+                                <StackPanel Grid.Row="2" 
+                                            Orientation="Horizontal" 
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding Role}" 
+                                               Style="{DynamicResource UserRoleTextStyle}"
+                                               VerticalAlignment="Center"/>
+
+                                    <TextBlock Text="{Binding Role, Converter={x:Static local:RoleToIconConverter.Instance}}"
+                                               Style="{DynamicResource UserRoleIconStyle}"
+                                               Margin="8,0,0,0"
+                                               VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</Page>

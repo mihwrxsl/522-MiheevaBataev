@@ -1,0 +1,14 @@
+﻿<Application x:Class="_522_Miheeva.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:_522_Miheeva"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!-- Изначально загружаем светлую тему -->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="GlamourLight.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

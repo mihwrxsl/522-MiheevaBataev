@@ -1,0 +1,117 @@
+﻿<Page x:Class="_522_Miheeva.Pages.PaymentsTabPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:_522_Miheeva.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="💰 Управление платежами">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <Border Grid.Row="0" 
+                Style="{DynamicResource HeaderFooterStyle}"
+                Padding="15">
+            <Grid>
+                <TextBlock Text="💰 Управление платежами" 
+                           Style="{DynamicResource HeaderTextStyle}"
+                           HorizontalAlignment="Center"/>
+            </Grid>
+        </Border>
+
+        <!-- Таблица -->
+        <Border Grid.Row="1" 
+                Margin="20"
+                Style="{DynamicResource AuthCardStyle}">
+
+            <StackPanel>
+                <!-- Панель действий -->
+                <StackPanel Orientation="Horizontal" 
+                            Margin="0,0,0,15"
+                            HorizontalAlignment="Center">
+                    <Button x:Name="BtnAddPayment" 
+                            Content="➕ Добавить платеж" 
+                            Style="{DynamicResource FilterButtonStyle}"
+                            Click="BtnAddPayment_Click"
+                            ToolTip="Добавить новый платеж в систему 💫"
+                            Margin="0,0,10,0"/>
+                    <Button x:Name="BtnDeletePayment" 
+                            Content="🗑️ Удалить" 
+                            Style="{DynamicResource FilterButtonStyle}"
+                            Click="BtnDeletePayment_Click"
+                            ToolTip="Удалить выбранные платежи ❌"
+                            Margin="10,0,0,0"/>
+                </StackPanel>
+
+                <!-- Таблица платежей -->
+                <DataGrid x:Name="DataGridPayment"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="True"
+                          Height="400"
+                          ToolTip="💰 Здесь отображаются все платежи системы">
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="📅 Дата" 
+                                          Binding="{Binding Date, StringFormat=dd.MM.yyyy}" 
+                                          Width="80"/>
+
+                        <DataGridTextColumn Header="👤 Пользователь" 
+                                          Binding="{Binding UserFIO}" 
+                                          Width="120"/>
+
+                        <DataGridTextColumn Header="🏷️ Название" 
+                                          Binding="{Binding Name}" 
+                                          Width="100"/>
+
+                        <DataGridTextColumn Header="📦 Количество" 
+                                          Binding="{Binding Num}" 
+                                          Width="80"/>
+
+                        <DataGridTextColumn Header="💵 Цена" 
+                                          Binding="{Binding Price, StringFormat=F2}" 
+                                          Width="80"/>
+
+                        <DataGridTextColumn Header="📊 Категория" 
+                                          Binding="{Binding CategoryName}" 
+                                          Width="100"/>
+
+                        <DataGridTextColumn Header="💰 Итого" 
+                                          Binding="{Binding Total, StringFormat=F2}" 
+                                          Width="80"/>
+
+                        <DataGridTemplateColumn Header="✨ Действия" 
+                                              Width="120">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="✏️ Редактировать" 
+                                            Style="{DynamicResource FilterButtonStyle}"
+                                            Click="EditPayment_Click"
+                                            Tag="{Binding ID}"
+                                            ToolTip="Изменить данные о платеже ✨"
+                                            Margin="2"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Border>
+
+        <!-- Статус -->
+        <Border Grid.Row="2" 
+                Style="{DynamicResource HeaderFooterStyle}"
+                Padding="10">
+            <TextBlock x:Name="StatusText" 
+                       Text="💰 Готово к работе!" 
+                       Style="{DynamicResource HeaderTextStyle}"
+                       HorizontalAlignment="Center"/>
+        </Border>
+    </Grid>
+</Page>

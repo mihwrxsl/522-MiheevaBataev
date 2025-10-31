@@ -1,0 +1,120 @@
+﻿<Page x:Class="_522_Miheeva.Pages.ChartsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:wf="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="📊 Аналитика платежей"
+      Background="{DynamicResource SoftPinkBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <Border Grid.Row="0" Background="{DynamicResource PrimaryBrush}" Padding="15">
+            <Grid>
+                <TextBlock Text="📊 Аналитика платежей" 
+                           Foreground="{DynamicResource GoldBrush}"
+                           FontSize="20" FontWeight="Bold"
+                           HorizontalAlignment="Center"/>
+            </Grid>
+        </Border>
+
+        <!-- Основной контент -->
+        <Border Grid.Row="1" Margin="20" Background="{DynamicResource SoftPinkBrush}"
+                BorderBrush="{DynamicResource GoldBrush}" BorderThickness="2"
+                Padding="25" CornerRadius="15">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Панель управления -->
+                <StackPanel Grid.Row="0" Orientation="Horizontal" 
+                            HorizontalAlignment="Center" Margin="0,0,0,20">
+
+                    <!-- Кнопки экспорта -->
+                    <StackPanel Orientation="Vertical" Margin="25,0,0,0" Width="150">
+                        <TextBlock Text="📤 Экспорт:" 
+               Style="{DynamicResource FilterLabelStyle}"
+               Margin="-26,0,26,5"/>
+
+                        <Button x:Name="BtnExportWord" 
+            Content="📝 В Word" 
+            Style="{DynamicResource FilterButtonStyle}"
+            Click="BtnExportWord_Click"
+            Margin="-26,2,26,2"
+            ToolTip="Экспорт отчета в Word 📄"/>
+
+                        <Button x:Name="BtnExportExcel" 
+            Content="📊 В Excel" 
+            Style="{DynamicResource FilterButtonStyle}"
+            Click="BtnExportExcel_Click"
+            Margin="-26,2,26,2"
+            ToolTip="Экспорт данных в Excel 📈"/>
+                    </StackPanel>
+
+                    <!-- Выбор пользователя -->
+                    <StackPanel Orientation="Vertical" Margin="0,0,25,0" Width="200">
+                        <TextBlock Text="👤 Пользователь:" 
+                                   Style="{DynamicResource FilterLabelStyle}"
+                                   Margin="0,0,0,5"/>
+                        <ComboBox x:Name="CmbUser" 
+                                  Style="{DynamicResource FilterComboBoxStyle}"
+                                  DisplayMemberPath="FIO"
+                                  SelectionChanged="CmbUser_SelectionChanged"/>
+                    </StackPanel>
+
+                    <!-- Выбор типа диаграммы -->
+                    <StackPanel Orientation="Vertical" Margin="0,0,25,0" Width="200">
+                        <TextBlock Text="📈 Тип диаграммы:" 
+                                   Style="{DynamicResource FilterLabelStyle}"
+                                   Margin="0,0,0,5"/>
+                        <ComboBox x:Name="CmbChartType" 
+                                  Style="{DynamicResource FilterComboBoxStyle}"
+                                  SelectedIndex="0"
+                                  SelectionChanged="CmbChartType_SelectionChanged">
+                            <ComboBoxItem Content="🍰 Круговая"/>
+                            <ComboBoxItem Content="📊 Столбчатая"/>
+                            <ComboBoxItem Content="📈 Линейная"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <!-- Кнопка обновления -->
+                    <StackPanel Orientation="Vertical" Margin="0,0,0,0" Width="150">
+                        <TextBlock Text="✨ Действия:" 
+                                   Style="{DynamicResource FilterLabelStyle}"
+                                   Margin="0,0,0,5"/>
+                        <Button x:Name="BtnRefresh" 
+                                Content="🔄 Обновить" 
+                                Style="{DynamicResource FilterButtonStyle}"
+                                Click="BtnRefresh_Click"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Диаграмма -->
+                <wf:WindowsFormsHost Grid.Row="1" HorizontalAlignment="Stretch" 
+                                    VerticalAlignment="Stretch">
+                    <!-- Диаграмма будет создана в коде -->
+                </wf:WindowsFormsHost>
+            </Grid>
+        </Border>
+
+        <!-- Статус -->
+        <Border Grid.Row="2" Background="{DynamicResource PrimaryBrush}" Padding="10">
+            <TextBlock x:Name="StatusText" 
+                       Text="🌸 Загрузка диаграммы..." 
+                       Foreground="{DynamicResource GoldBrush}" 
+                       HorizontalAlignment="Center" 
+                       FontSize="12"/>
+        </Border>
+    </Grid>
+</Page>

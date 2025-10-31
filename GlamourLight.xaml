@@ -1,0 +1,237 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- 🌸 РОЗОВО-ЗОЛОТАЯ ПАЛИТРА -->
+    <SolidColorBrush x:Key="PrimaryBrush" Color="DeepPink"/>
+    <SolidColorBrush x:Key="GoldBrush" Color="Gold"/>
+    <SolidColorBrush x:Key="SoftPinkBrush" Color="LavenderBlush"/>
+    <SolidColorBrush x:Key="LightGoldBrush" Color="LightYellow"/>
+    <SolidColorBrush x:Key="TextBrush" Color="DarkMagenta"/>
+    <SolidColorBrush x:Key="WhiteBrush" Color="White"/>
+    <SolidColorBrush x:Key="LightPinkBrush" Color="LightPink"/>
+
+    <!-- 🌟 СТИЛИ ДЛЯ MAIN WINDOW -->
+    <Style TargetType="Border" x:Key="HeaderFooterStyle">
+        <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="HeaderTextStyle">
+        <Setter Property="Foreground" Value="{StaticResource GoldBrush}"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <!-- 💫 СТИЛИ ДЛЯ КНОПОК -->
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteBrush}"/>
+        <!-- Белый текст -->
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Padding" Value="15,8"/>
+    </Style>
+
+    <!-- 🎀 СТИЛЬ ДЛЯ КНОПКИ "НАЗАД" -->
+    <Style x:Key="BackButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource GoldBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}"/>
+        <!-- Розовый текст -->
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Margin" Value="10,0,0,0"/>
+        <Setter Property="Padding" Value="10,5"/>
+    </Style>
+
+    <!-- 🎀 СТИЛЬ ДЛЯ КАРТОЧКИ АВТОРИЗАЦИИ -->
+    <Style TargetType="Border" x:Key="AuthCardStyle">
+        <Setter Property="Background" Value="{StaticResource SoftPinkBrush}"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="BorderBrush" Value="{StaticResource GoldBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+    </Style>
+
+    <!-- ✨ СТИЛИ ДЛЯ ТЕКСТОВЫХ ПОЛЕЙ -->
+    <Style TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource LightGoldBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource GoldBrush}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Height" Value="40"/>
+    </Style>
+
+    <Style TargetType="PasswordBox">
+        <Setter Property="Background" Value="{StaticResource LightGoldBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource GoldBrush}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Height" Value="40"/>
+    </Style>
+
+    <!-- 💖 СТИЛЬ ДЛЯ ТЕКСТА -->
+    <Style TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+
+    <Style TargetType="ToolTip">
+        <Setter Property="Background" Value="{StaticResource GoldBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Padding" Value="10,5"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <!-- 🌸 ФОН ДЛЯ СТРАНИЦ -->
+    <Style TargetType="Grid">
+        <Setter Property="Background" Value="{StaticResource SoftPinkBrush}"/>
+    </Style>
+
+    <!-- СТИЛЬ ДЛЯ ЗАГОЛОВКОВ НА СТРАНИЦАХ -->
+    <Style x:Key="PageTitleStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    
+    <!-- 🌟 СТИЛИ ДЛЯ СТРАНИЦЫ ПОЛЬЗОВАТЕЛЕЙ -->
+<Style x:Key="FilterPanelStyle" TargetType="Border">
+    <Setter Property="Background" Value="{StaticResource LightGoldBrush}"/>
+    <Setter Property="BorderBrush" Value="{StaticResource GoldBrush}"/>
+    <Setter Property="BorderThickness" Value="2"/>
+</Style>
+
+<Style x:Key="FilterLabelStyle" TargetType="TextBlock">
+    <Setter Property="FontSize" Value="14"/>
+    <Setter Property="FontWeight" Value="SemiBold"/>
+    <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+</Style>
+
+<Style x:Key="FilterTextBoxStyle" TargetType="TextBox">
+    <Setter Property="Height" Value="35"/>
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="Padding" Value="10"/>
+</Style>
+
+<Style x:Key="FilterComboBoxStyle" TargetType="ComboBox">
+    <Setter Property="Height" Value="35"/>
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="Padding" Value="5"/>
+</Style>
+
+<Style x:Key="FilterCheckBoxStyle" TargetType="CheckBox">
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="FontWeight" Value="Normal"/>
+    <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+</Style>
+
+<Style x:Key="FilterButtonStyle" TargetType="Button">
+    <Setter Property="Height" Value="35"/>
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="FontWeight" Value="SemiBold"/>
+</Style>
+
+    <!-- Улучшенные стили для карточек -->
+<Style x:Key="UserCardStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource SoftPinkBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="CornerRadius" Value="15"/>
+        <Setter Property="Padding" Value="15"/>
+</Style>
+
+<Style x:Key="UserNameBorderStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource LightGoldBrush}"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Padding" Value="12"/>
+        <Setter Property="BorderBrush" Value="{StaticResource GoldBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+</Style>
+
+    <Style x:Key="UserNameTextStyle" TargetType="TextBlock">
+    <Setter Property="FontSize" Value="16"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="TextWrapping" Value="Wrap"/>
+    <Setter Property="TextAlignment" Value="Center"/>
+    <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+</Style>
+
+<Style x:Key="UserAvatarStyle" TargetType="Border">
+    <Setter Property="Background" Value="{StaticResource WhiteBrush}"/>
+    <Setter Property="CornerRadius" Value="10"/>
+    <Setter Property="BorderBrush" Value="{StaticResource GoldBrush}"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="Padding" Value="10"/>
+</Style>
+
+<Style x:Key="UserAvatarIconStyle" TargetType="TextBlock">
+    <Setter Property="FontSize" Value="48"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}"/>
+</Style>
+
+<Style x:Key="UserRoleTextStyle" TargetType="TextBlock">
+    <Setter Property="FontSize" Value="14"/>
+    <Setter Property="FontWeight" Value="SemiBold"/>
+    <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+</Style>
+
+<Style x:Key="UserRoleIconStyle" TargetType="TextBlock">
+    <Setter Property="FontSize" Value="18"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}"/>
+</Style>
+
+    <!-- 🌸 СТИЛИ ДЛЯ АДМИН-ПАНЕЛИ -->
+    <Style x:Key="AdminCardStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource SoftPinkBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource GoldBrush}"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="Padding" Value="25"/>
+    </Style>
+
+    <Style x:Key="AdminButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource SoftPinkBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+
+    <!-- 🌟 СТИЛИ ДЛЯ АДМИН-ПАНЕЛИ -->
+    <Style x:Key="AdminWelcomeTextStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
+
+    <Style x:Key="AdminSubTextStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
+</ResourceDictionary>

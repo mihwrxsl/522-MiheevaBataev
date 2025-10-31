@@ -1,0 +1,243 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- 🌙 ФИОЛЕТОВО-СЕРЕБРЯНАЯ ПАЛИТРА -->
+    <SolidColorBrush x:Key="PrimaryBrush" Color="DarkOrchid"/>
+    <SolidColorBrush x:Key="BackgroundBrush" Color="Lavender"/>
+    <SolidColorBrush x:Key="SilverBrush" Color="Silver"/>
+    <SolidColorBrush x:Key="LightPurpleBrush" Color="Lavender"/>
+    <SolidColorBrush x:Key="DarkPurpleBrush" Color="Indigo"/>
+    <SolidColorBrush x:Key="TextBrush" Color="White"/>
+    <SolidColorBrush x:Key="VeryLightPurple" Color="FloralWhite"/>
+
+    <!-- Стили для MainWindow -->
+    <Style TargetType="Border" x:Key="HeaderFooterStyle">
+        <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="HeaderTextStyle">
+        <Setter Property="Foreground" Value="{StaticResource SilverBrush}"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <!-- Стили для кнопок -->
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource SilverBrush}"/>
+        <!-- Фиолетовый текст -->
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Padding" Value="15,8"/>
+    </Style>
+
+    <!-- 🎀 СТИЛЬ ДЛЯ КНОПКИ "НАЗАД" -->
+    <Style x:Key="BackButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource SilverBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource DarkPurpleBrush}"/>
+        <!-- Темно-фиолетовый текст -->
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Margin" Value="10,0,0,0"/>
+        <Setter Property="Padding" Value="10,5"/>
+    </Style>
+
+    <!-- 🎀 СТИЛЬ ДЛЯ КАРТОЧКИ АВТОРИЗАЦИИ -->
+    <Style TargetType="Border" x:Key="AuthCardStyle">
+        <Setter Property="Background" Value="{StaticResource LightPurpleBrush}"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="BorderBrush" Value="{StaticResource SilverBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+    </Style>
+
+    <!-- ✨ СТИЛИ ДЛЯ ТЕКСТОВЫХ ПОЛЕЙ -->
+    <Style TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource VeryLightPurple}"/>
+        <Setter Property="Foreground" Value="{StaticResource DarkPurpleBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource SilverBrush}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Height" Value="40"/>
+    </Style>
+
+    <Style TargetType="PasswordBox">
+        <Setter Property="Background" Value="{StaticResource VeryLightPurple}"/>
+        <Setter Property="Foreground" Value="{StaticResource DarkPurpleBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource SilverBrush}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Height" Value="40"/>
+    </Style>
+
+    <!-- 💖 СТИЛЬ ДЛЯ ТЕКСТА -->
+    <Style TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource DarkPurpleBrush}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+
+    <!-- 💫 СТИЛЬ ДЛЯ ПОДСКАЗОК -->
+    <Style TargetType="ToolTip">
+        <Setter Property="Background" Value="{StaticResource SilverBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Padding" Value="10,5"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <!-- 🌙 ФОН ДЛЯ СТРАНИЦ -->
+    <Style TargetType="Grid">
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
+    </Style>
+
+    <!-- СТИЛЬ ДЛЯ ЗАГОЛОВКОВ НА СТРАНИЦАХ -->
+    <Style x:Key="PageTitleStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource SilverBrush}"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    
+    <!-- 🌟 СТИЛИ ДЛЯ СТРАНИЦЫ ПОЛЬЗОВАТЕЛЕЙ -->
+<Style x:Key="FilterPanelStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource WhiteBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource SilverBrush}"/>
+    <Setter Property="BorderThickness" Value="2"/>
+</Style>
+
+    <Style x:Key="FilterLabelStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Foreground" Value="{StaticResource DarkPurpleBrush}"/>
+    </Style>
+
+    <Style x:Key="FilterTextBoxStyle" TargetType="TextBox">
+    <Setter Property="Height" Value="35"/>
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="Padding" Value="10"/>
+    <Setter Property="Background" Value="{StaticResource VeryLightPurple}"/>
+    <Setter Property="Foreground" Value="{StaticResource DarkPurpleBrush}"/>
+    <Setter Property="BorderBrush" Value="{StaticResource SilverBrush}"/>
+</Style>
+
+<Style x:Key="FilterComboBoxStyle" TargetType="ComboBox">
+    <Setter Property="Height" Value="35"/>
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="Padding" Value="5"/>
+    <Setter Property="Background" Value="{StaticResource VeryLightPurple}"/>
+    <Setter Property="Foreground" Value="{StaticResource DarkPurpleBrush}"/>
+    <Setter Property="BorderBrush" Value="{StaticResource SilverBrush}"/>
+</Style>
+
+    <Style x:Key="FilterCheckBoxStyle" TargetType="CheckBox">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="Foreground" Value="{StaticResource DarkPurpleBrush}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="FilterButtonStyle" TargetType="Button">
+    <Setter Property="Height" Value="35"/>
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="FontWeight" Value="SemiBold"/>
+    <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
+    <Setter Property="Foreground" Value="{StaticResource SilverBrush}"/>
+</Style>
+
+<!-- Стили для карточек пользователей -->
+<Style x:Key="UserCardStyle" TargetType="Border">
+    <Setter Property="Background" Value="{StaticResource LightPurpleBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}"/>
+    <Setter Property="BorderThickness" Value="2"/>
+    <Setter Property="CornerRadius" Value="15"/>
+</Style>
+
+<Style x:Key="UserNameBorderStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource WhiteBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource SilverBrush}"/>
+        <Setter Property="CornerRadius" Value="10"/>
+    <Setter Property="Padding" Value="10"/>
+</Style>
+
+    <Style x:Key="UserNameTextStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="{StaticResource DarkPurpleBrush}"/>
+    </Style>
+
+    <Style x:Key="UserAvatarStyle" TargetType="Border">
+    <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
+    <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="BorderBrush" Value="{StaticResource SilverBrush}"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="Padding" Value="10"/>
+</Style>
+
+<Style x:Key="UserAvatarIconStyle" TargetType="TextBlock">
+    <Setter Property="FontSize" Value="48"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}"/>
+</Style>
+
+    <Style x:Key="UserRoleTextStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Foreground" Value="{StaticResource DarkPurpleBrush}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="UserRoleIconStyle" TargetType="TextBlock">
+    <Setter Property="FontSize" Value="18"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}"/>
+</Style>
+    
+    <!-- 🌟 СТИЛЬ ДЛЯ ТЕКСТА ПРИВЕТСТВИЯ -->
+    <Style x:Key="AdminWelcomeTextStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource DarkPurpleBrush}"/>
+        <!-- ФИОЛЕТОВЫЙ -->
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
+
+    <Style x:Key="AdminSubTextStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource DarkPurpleBrush}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
+    <!-- 🌙 СТИЛИ ДЛЯ АДМИН-ПАНЕЛИ -->
+    <Style x:Key="AdminCardStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource LightPurpleBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource SilverBrush}"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="Padding" Value="25"/>
+    </Style>
+
+    <Style x:Key="AdminButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource LightPurpleBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource LightPurpleBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+</ResourceDictionary>
