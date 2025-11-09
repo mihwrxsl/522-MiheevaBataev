@@ -25,12 +25,13 @@
 ### Авторизация и интерфейс
 | Светлая тема | Тёмная тема |
 |--------------|-------------|
-| ![Авторизация светлая]([https://github.com/mihwrxsl/522-MiheevaBataev/raw/main/media/image35.png](https://github.com/mihwrxsl/522-MiheevaBataev/blob/master/media/photo_2025-11-09_22-37-48.jpg)) | ![Авторизация тёмная]([https://github.com/mihwrxsl/522-MiheevaBataev/raw/main/media/image41.png](https://github.com/mihwrxsl/522-MiheevaBataev/blob/master/media/photo_2025-11-09_22-38-16.jpg)) |
+| ![Авторизация светлая](https://github.com/mihwrxsl/522-MiheevaBataev/blob/master/media/photo_2025-11-09_22-37-48.jpg) | ![Авторизация тёмная](https://github.com/mihwrxsl/522-MiheevaBataev/blob/master/media/photo_2025-11-09_22-38-16.jpg) |
 
 ### Основные разделы
 | Панель администратора | Управление платежами |
 |----------------------|---------------------|
-| ![Админ панель]([https://github.com/mihwrxsl/522-MiheevaBataev/raw/main/media/image74.png](https://github.com/mihwrxsl/522-MiheevaBataev/blob/master/media/photo_2025-11-09_22-39-33.jpg)) | ![Платежи]([https://github.com/mihwrxsl/522-MiheevaBataev/raw/main/media/image127.png](https://github.com/mihwrxsl/522-MiheevaBataev/blob/master/media/photo_2025-11-09_22-40-45.jpg)) |
+| ![Админ панель](https://github.com/mihwrxsl/522-MiheevaBataev/blob/master/media/photo_2025-11-09_22-39-33.jpg) | ![Платежи](https://github.com/mihwrxsl/522-MiheevaBataev/blob/master/media/photo_2025-11-09_22-40-45.jpg) |
+
 
 ## 🛠️ Технологический стек
 
